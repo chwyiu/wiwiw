@@ -27,7 +27,12 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        //dd($request->all());
+        $data['nama'] = $request->input('nama');
+        $data['email'] = $request->input('email');
+        $data['pertanyaan'] = $request->input('pertanyaan');
+
+        return view('home-question-respon-blade', $data);
     }
     /**
      * Display the specified resource.
